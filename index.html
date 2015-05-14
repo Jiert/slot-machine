@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slot Machine</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div id="first" class="col-xs-4 well"></div>
+        <div id="second" class="col-xs-4 well"></div>
+        <div id="third" class="col-xs-4 well"></div>
+      </div>
+      <button class="btn btn-primary" id="pull">Pull Lever</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script> 
+    
+    <script>
+      var AppView = Backbone.View.extend({
+
+        className: 'btn btn-primary',
+
+        events: {
+          'click' : 'startTheMachine'
+        },
+
+        initialize: function(){
+          this.firstRoller = new RollerView({
+            settings: ['C', 'T', 'E'],
+            spins: [5, 10],
+            el: '#first'
+          });
+          this.secondRoller = new RollerView({
+            settings: ['t', 'e', 'c'],
+            spins: [10, 15],
+            el: '#second'
+          });
+          this.thirdRoller = new RollerView({
+            settings: ['c', 't', 'e'],
+            spins: [15, 20],
+            el: '#third'
+          });
+
+          this.firstRoller.render();
+          this.secondRoller.render();
+          this.thirdRoller.render();
+        },
+
+        startTheMachine: function(){
+          this.firstRoller.spin(0);
+          this.secondRoller.spin(0);
+          this.thirdRoller.spin(0);
+        },
+
+        render: function(){
+          return this;
+        }
+      });
+
+      var RollerView = Backbone.View.extend({
+        
+        // settings: ['C', 'T', 'E'],
+        count: 0,
+
+        initialize: function(options){
+          // _(this).bindAll('spin');
+
+          this.settings = options.settings;
+          this.spins = options.spins;
+        },
+
+        increment: function(){
+          this.count = this.count >= 2 ? 0 : ++this.count;
+        },
+
+        finish: function(){
+          this.$el.removeAttr('disabled')
+        },
+
+        spin: function(i){
+          debugger;
+          this.$el.attr('disabled')
+          // var random = _.random(10, 15)
+          var random = _.random(this.spins[0], this.spins[1]);
+
+          setTimeout(_(function(){
+            this.increment();
+            this.render();
+
+            if (i < random){
+              this.spin(++i);
+            }
+            else {
+              this.finish();
+            }
+          }).bind(this), 100);
+        },
+
+        render: function(){
+          this.$el.html(this.settings[this.count]);
+          return this
+        }
+      });
+
+      var app = new AppView({ el: '#pull' }).render()
+
+    </script>
+   
+  </body>
+</html>           

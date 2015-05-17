@@ -157,6 +157,23 @@
       </div>
     </div>
 
+    <div id="win-modal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">You're a Winner!</h4>
+          </div>
+          <div class="modal-body">
+            <p>It looks like you're having a nice warm cup of <span class="beverage"></span>!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cool!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <style type="text/css">
       h1 {
         margin: 10px;
@@ -216,6 +233,8 @@
           'click' : 'startTheMachine'
         },
 
+        map: ['Coffee', 'Tea', 'Espresso'],
+
         initialize: function(){
           _(this).bindAll('checkWin');
 
@@ -245,15 +264,15 @@
         },
 
         onFinish: function(){
-          _(this.checkWin).defer();
-          // this.checkWin();
+          this.checkWin();
           this.$el.removeAttr('disabled');
         },
 
         checkWin: function(){
           var unique = _([this.firstRoller.count, this.secondRoller.count, this.thirdRoller.count]).uniq();
           if (unique.length === 1){
-            alert('you Win!');
+            $('.beverage').text(this.map[unique[0]]);
+            $('#win-modal').modal()
           }
         },
 
@@ -296,7 +315,7 @@
               this.spin(++i);
             }
             else {
-              _(this.finished).defer();
+              _(this.finished).delay(150);
             }
           }).bind(this), 100);
         },

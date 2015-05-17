@@ -6,37 +6,202 @@
   </head>
   <body>
 
-    <div class="container">
+    <div id="background" class="container">
       <div class="row">
-        <div id="first" class="col-xs-4 well"></div>
-        <div id="second" class="col-xs-4 well"></div>
-        <div id="third" class="col-xs-4 well"></div>
+        <div class="col-xs-8 col-xs-offset-2 border text-center"><h1>Beverage Slot Machine</h1></div>
       </div>
-      <button class="btn btn-primary btn-block" id="pull">Pull Lever</button>
+      <div class="row border spinner-container">
+        <div id="first" class="col-xs-4 border"></div>
+        <div id="second" class="col-xs-4 border"></div>
+        <div id="third" class="col-xs-4 border"></div>
+      </div>
+      <div class="row border">
+        <h3 class="text-center">Winners!</h3>
+        
+        <div class="row">
+          <div class="col-xs-2 col-xs-offset-2">
+            <div class="row">
+              <div class="col-xs-6 center-parent">
+                <img class="img-responsive center" src="coffeemaker.png"></img>
+              </div>
+              <div class="col-xs-6">
+                <h2 class="text-center symbol">+</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-2">
+            <div class="row">
+              <div class="col-xs-6 center-parent">
+                <img class=" img-responsive center" src="coffee-filter.jpg"></img>
+              </div>
+              <div class="col-xs-6">
+                <h2 class="text-center symbol">+</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-2">
+            <div class="row">
+              <div class="col-xs-6 center-parent">
+                <img class=" img-responsive center" src="coffee-grounds.jpg"></img>
+              </div>
+              <div class="col-xs-6">
+                <h2 class="text-center symbol">=</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-2">
+            <div class="row">
+              <div class="col-xs-6 col-xs-offset-3 center-parent">
+                <img class=" img-responsive center" src="cup-coffee.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          
+          <div class="col-xs-2 col-xs-offset-2">
+            <div class="row">
+              <div class="col-xs-6 center-parent">
+                <img class=" img-responsive center" src="espressomachine.jpg"></img>
+              </div>
+              <div class="col-xs-6">
+                <h2 class="text-center symbol">+</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-2">
+            <div class="row">
+              <div class="col-xs-6 center-parent">
+                <img class=" img-responsive center" src="espresso-tamper.jpg"></img>
+              </div>
+              <div class="col-xs-6">
+                <h2 class="text-center symbol">+</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-2">
+            <div class="row">
+              <div class="col-xs-6 center-parent">
+                <img class=" img-responsive center" src="espresso-beans.jpg"></img>
+              </div>
+              <div class="col-xs-6">
+                <h2 class="text-center symbol">=</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-2">
+            <div class="row">
+              <div class="col-xs-6 col-xs-offset-3 center-parent">
+                <img class=" img-responsive center" src="cup-coffee.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-2 col-xs-offset-2">
+            <div class="row">
+              <div class="col-xs-6 center-parent">
+                <img class=" img-responsive center" src="teapot.jpg"></img>
+              </div>
+              <div class="col-xs-6">
+                <h2 class="text-center symbol">+</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-2">
+            <div class="row">
+              <div class="col-xs-6 center-parent">
+                <img class=" img-responsive center" src="tea-strainer.jpg"></img>
+              </div>
+              <div class="col-xs-6">
+                <h2 class="text-center symbol">+</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-2">
+            <div class="row">
+              <div class="col-xs-6 center-parent">
+                <img class=" img-responsive center" src="loose-tea.jpg"></img>
+              </div>
+              <div class="col-xs-6">
+                <h2 class="text-center symbol">=</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-2">
+            <div class="row">
+              <div class="col-xs-6 col-xs-offset-3 center-parent">
+                <img class=" img-responsive center" src="cup-coffee.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 border">
+          <button class="btn btn-primary btn-block btn-lg" id="pull">Pull Lever</button>
+        </div>
+      </div>
     </div>
 
     <style type="text/css">
-      .row {
-        height: 330px;
-        overflow: hidden;
+      h1 {
+        margin: 10px;
       }
-      .row .well {
-        background: #fff;
-        /*display: flex;*/
-        height: 310px;
-        position: relative;
-        /*padding: 0;*/
-        overflow: hidden;
+
+      img {
+        max-height: 250px;
       }
-      .row .well img {
-        position: absolute;
-        left: 0;
-        right:0;
-        bottom: 0;
-        top: 0;
-        margin: auto;
+
+      button {
         padding: 20px;
       }
+
+      .symbol {
+        margin: 30px 0;
+      }
+
+      .border {
+        border: solid 1px #ccc;
+      }
+
+      .center-parent {
+        height: 100px;
+        position: relative;
+      }
+
+      .center {
+        position: absolute;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        margin: auto;
+      }
+
+      .spinner-container {
+        height: 290px;
+        overflow: hidden;
+        padding: 20px 10%;
+      }
+
+      .spinner-container > div {
+        overflow: hidden;
+        height: 250px;
+        position: relative;
+      }
+
     </style>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -52,6 +217,8 @@
         },
 
         initialize: function(){
+          _(this).bindAll('checkWin');
+
           this.firstRoller = new RollerView({
             settings: ['coffeemaker.png', 'teapot.jpg', 'espressomachine.jpg'],
             spins: [5, 10],
@@ -78,7 +245,16 @@
         },
 
         onFinish: function(){
+          _(this.checkWin).defer();
+          // this.checkWin();
           this.$el.removeAttr('disabled');
+        },
+
+        checkWin: function(){
+          var unique = _([this.firstRoller.count, this.secondRoller.count, this.thirdRoller.count]).uniq();
+          if (unique.length === 1){
+            alert('you Win!');
+          }
         },
 
         startTheMachine: function(){
@@ -96,10 +272,10 @@
 
       var RollerView = Backbone.View.extend({
         count: 0,
-        template: _.template('<img class="img-responsive item item-blur" src="<%= src %>"/>'),
+        template: _.template('<img class="img-responsive center item item-blur" src="<%= src %>"/>'),
 
         initialize: function(options){
-          _(this).bindAll('removeImage');
+          _(this).bindAll('removeImage', 'finished');
 
           this.settings = options.settings;
           this.spins = options.spins;
@@ -120,9 +296,13 @@
               this.spin(++i);
             }
             else {
-              this.trigger('finished');
+              _(this.finished).defer();
             }
           }).bind(this), 100);
+        },
+
+        finished: function(){
+          this.trigger('finished');
         },
 
         moveImage: function(){

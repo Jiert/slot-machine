@@ -107,7 +107,7 @@ var RollerView = Backbone.View.extend({
   moveImage: function(){
     this.$img.animate({
       marginTop: 200
-    }, 50, 'swing', this.removeImage)
+    }, 50, 'swing', this.removeImage);
   },
 
   removeImage: function(){
@@ -122,7 +122,7 @@ var RollerView = Backbone.View.extend({
 
     this.$img = this.$('img');
 
-    return this
+    return this;
   }
 });
 

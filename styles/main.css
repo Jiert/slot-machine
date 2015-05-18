@@ -1,0 +1,48 @@
+h1 {
+  margin: 10px;
+}
+
+img {
+  max-height: 250px;
+}
+
+button {
+  padding: 20px;
+}
+
+.symbol {
+  margin: 30px 0;
+}
+
+.center-parent {
+  height: 100px;
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  margin: auto;
+}
+
+.spinner-container {
+  box-shadow: 1px 1px 3px #ccc;
+  margin: 0 10%;
+  height: 290px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.spinner-container > div {
+  border-right: solid 1px #efefef;
+  border-top: solid 1px #efefef;
+  border-bottom: solid 1px #efefef;
+  overflow: hidden;
+  height: 250px;
+  position: relative;
+}
+
+.spinner-container > div:first-child {
+  border-left: solid 1px #efefef;
+}

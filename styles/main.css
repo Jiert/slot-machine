@@ -35,14 +35,14 @@ button {
 }
 
 .spinner-container > div {
-  border-right: solid 1px #efefef;
-  border-top: solid 1px #efefef;
-  border-bottom: solid 1px #efefef;
+  border-right: solid 1px #f0f0f0;
+  border-top: solid 1px #f0f0f0;
+  border-bottom: solid 1px #f0f0f0;
   overflow: hidden;
   height: 250px;
   position: relative;
 }
 
 .spinner-container > div:first-child {
-  border-left: solid 1px #efefef;
+  border-left: solid 1px #f0f0f0;
 }
